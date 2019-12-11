@@ -1,4 +1,4 @@
-
+ 
 
 
 
@@ -41,3 +41,17 @@ $("#button9").click(function() {
     performLogic("#button9","#tile9");
 });
 
+let turnNum = 0;
+$(".buttons").click(function() {
+    var turnNum = turnNum + 1;
+});
+console.log(turnNum);
+function performLogic(button, tile){
+    $(button).click(function() {
+        if(turnNum % 2 === 0) {
+            $(tile).text("X");        
+        } else {
+            $(tile).text("O");
+        }    
+    });
+}
